@@ -14,4 +14,3 @@ if (hour < 18 && hour >=8 ) {
 } else {
     console.log("close")
 }
-// 
