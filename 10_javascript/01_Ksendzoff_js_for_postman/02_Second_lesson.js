@@ -7,10 +7,21 @@
 // console.log( true || false );  // true
 // console.log( false || false ); // false
 
+console.log("=== 1.1")
 // Логический оператор "И" && 
-let hour = 18
+let hour = 21
 if (hour < 18 && hour >=8 ) {
     console.log("open")
 } else {
     console.log("close")
 }
+
+console.log("=== 1.2")
+// constrait на 24 часа для этой же задачи c ИЛИ
+let hour2 = 9;
+if (hour2 >= 24 || hour2 < 0) {
+    console.log("error")
+} else if (hour2 >=8 && hour2 < 18) {
+    console.log("open")
+}
+else {console.log("close")}
