@@ -48,4 +48,4 @@ function workDays2 (days2, hours2) {
         console.log("workHours = ", hours2)
     }
 }
-workDays2 ("monday", 7)
+workDays2 ("monday", 8)
