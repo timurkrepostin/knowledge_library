@@ -30,7 +30,22 @@ else if ("saturday" || "sunday") {
 // добить рабочие и выходные дни с часами
 
 console.log("=== 2. функции")
-// 
-function workDays (){
-
+console.log("=== 2.1")
+// Элементарная работа функции
+function workDays (days, hours) {
+    console.log("workDay = ", days)
+    console.log("workHour = ", hours)
 }
+ workDays("monday" , 7)
+
+ console.log("=== 2.2")
+// Проверки на тип данных
+function workDays2 (days2, hours2) {
+    if (typeof days2 == 'string'){
+        console.log("workDay = ", days2)
+    }
+    if (typeof hours2 == 'number'){
+        console.log("workHours = ", hours2)
+    }
+}
+workDays2 ("monday", 7)
