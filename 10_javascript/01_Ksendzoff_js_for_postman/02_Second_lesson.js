@@ -9,7 +9,7 @@ console.log("=== 1. и или")
 // console.log( false || false ); // false
 
 console.log("=== 1.1")
-// Логический оператор "И" && 
+// "Магазин 5/2, 8-18", Логический оператор "И" && 
 let hour = 21
 if (hour < 18 && hour >=8 ) {
     console.log("open")
@@ -18,7 +18,7 @@ if (hour < 18 && hour >=8 ) {
 }
 
 console.log("=== 1.2")
-// constrait на 24 часа и выхи для этой же задачи c ИЛИ
+// "Магазин 5/2, 8-18", constrait на 24 часа и выхи для этой же задачи c ИЛИ
 let hour2 = 17;
 if (hour2 >= 24 || hour2 < 0) {
     console.log("error")
@@ -49,3 +49,11 @@ function workDays2 (days2, hours2) {
     }
 }
 workDays2 ("monday", 8)
+// Первый иф проверяет на стринг, второй на намбер, выводит после проверки каждого
+
+console.log("=== 2.3")
+// "Магазин 5/2, 8-18", проверка на стринг, намбер, день недели и часы
+function workDays3(day){
+    let h_days = ['Saturday', 'Sunday'];
+    let w_days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+}
