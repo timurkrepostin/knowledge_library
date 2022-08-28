@@ -1,0 +1,17 @@
+01_types.js
+02_variables.js
+03_types_conversion.js
+04_number.js
+05_string.js
+06_template_string.js
+07_object.js
+08_ifelse_logicalops.js
+09_switch.js
+10_while_for.js
+11_function.js
+12_array_methods.js
+13_callback.js
+14_object_methods.js
+15_arrow_functions.js
+
+
