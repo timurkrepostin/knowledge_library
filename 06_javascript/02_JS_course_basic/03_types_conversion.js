@@ -8,7 +8,7 @@ value = String(10);
 value = String(10 + 40);
 value = (40).toString(); // преобразование через метод toString
 // console.log(value); значение остается прежним
-// console.log(typeof value); тип данных перешел в string
+// console.log(typeof value); тип данных перешел в String
 
 // 1.2 Boolean to String
 value = String(false);
