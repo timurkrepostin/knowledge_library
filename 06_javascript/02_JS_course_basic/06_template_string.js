@@ -1,1 +1,5 @@
-// JS_course_basic
+
+// Шаблонные строки
+
+const firstName = 'Denis';
+const lastName = 'Petrov';
