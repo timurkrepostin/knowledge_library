@@ -1,1 +1,2 @@
-// JS_course_basic
+
+// Объекты
