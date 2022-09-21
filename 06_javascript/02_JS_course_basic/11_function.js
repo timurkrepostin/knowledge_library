@@ -22,7 +22,7 @@
 
 // 2. return
 
-// function sayHello(firstName, lastName) { // объявляем параметры, которые будут приниматься фунция
+// function sayHello(firstName, lastName) { // объявляем параметры, которые будут приниматься фунцкцией
 //     console.log(firstName, lastName);
 //     console.log('Hello world'); // тело функции, в которой заключена вся логика работы этой функции
 //     return `Hello ${firstName} ${lastName}`; // после return функция прекращает свою работу
