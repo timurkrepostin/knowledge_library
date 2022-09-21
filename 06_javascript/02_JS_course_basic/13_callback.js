@@ -12,9 +12,9 @@ function foo() {
 }
 foo();
 foo.field = 'Denis';
-console.log(foo.field); // таким образом доказываем, что функция объект, который можно дополнить
+// console.log(foo.field); // таким образом доказываем, что функция объект, который можно дополнить
 
-// Функции высшего порядка - это функции, которые принимают в качестве параметров другие функции или возвращают функции
+// Функции высшего порядка - это функции, которые принимают в качестве параметров другие функции или возвращают другие функции 
 
 // Аналог метода map для массивов.
 // Map - возвращает новый массив, состоящий из результатов вызов функции callback 
@@ -26,7 +26,7 @@ let newArr = [];
 for (let i = 0; i < arr.length; i++) {
     newArr.push(arr[i].length);
 }
-console.log(newArr);
+// console.log(newArr);
 
 // Плюс сделать вывод всего массива в верхнем регистре
 
@@ -34,11 +34,72 @@ let newArr2 = [];
 for (let i = 0; i < arr.length; i++) {
     newArr2.push(arr[i].toUpperCase());
 }
-console.log(newArr2);
+// console.log(newArr2);
 
 // Если объединить это в функцию, то придется постоянно дублировать код, что плохо для качественного кода
 
-// Функция, дающая на выходе количество символов каждого элемента массива
-function mapArray(arr, fn) {
-    const res = []
+// Функция высшего порядка, принимающие в виде параметра другие функции, решающая проблему примера выше
+
+const names = ['Denis', 'Ivan', 'Maks', 'Olga']; 
+
+function mapArray(arr, fn) { // функция будет принимать два параметра - массив arr и функцию fn
+    const res = [] // внутри себя она будет создавать новый массивый res 
+    for (let i = 0; i < arr.length; i++) { // 1
+        res.push(fn(arr[i])); // 2
+    } 
+    return res; // 3
 }
+// 1. далее она будет проходиться по этому переданному массиву, 
+// 2. но на каждой итерации будет пушить в результирующий массив res результат вызова переданной функции fn, а в переданной функции 
+// мы будем передавать один элемент массива
+// 3. Возвращать будем результирующий массивы
+
+// Далее от зависимости от поставленной задачи (как преобразовывать массив), можно передавать функцию, которая будет принимать один 
+// элемент массива, что-то с ним делать и возвращать результат
+
+function nameLenght(el) {
+    // console.log(el);
+    return el.length;
+}
+
+function nameToUpperCase(el) {
+    return el.toUpperCase();
+}
+
+const result = mapArray(names, nameLenght);
+const result2 = mapArray(names, nameToUpperCase);
+// console.log(result, result2)
+
+console.log('=======')
+
+// Функции, возвращающие другие функции
+
+function greeting(firstName) {
+    return function (lastName) {
+        return `Hello, ${firstName} ${lastName}`;
+    };
+}
+
+const testGreeting = greeting('Timur');
+const fullName = testGreeting('Krepostin');
+const fullName2 = greeting('Timur')('Krepostin');
+console.log(fullName);
+console.log(fullName2);
+
+
+function question(job) {
+    if (job === 'developer') {
+        return function(name) {
+            return `${name}, что такое JS?`;
+        };
+    } else if (job === 'teacher') {
+        return function(name) {
+            return `${name}, что такое PastPerfect?`;
+        };
+    }
+}
+
+const devQn = question('developer');
+const teachQn = question('teacher');
+console.log(devQn('Timur'));
+console.log(teachQn('Timur'));
