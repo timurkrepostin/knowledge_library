@@ -8,7 +8,7 @@
 // Пример, как не рекомендуется дополнять объект функции
 
 function foo() {
-    console.log('Hello word');
+    // console.log('Hello word');
 }
 foo();
 foo.field = 'Denis';
@@ -80,16 +80,16 @@ function greeting(firstName) {
     };
 }
 
-const testGreeting = greeting('Timur');
+const testGreeting = greeting('Timur'); 
 const fullName = testGreeting('Krepostin');
 const fullName2 = greeting('Timur')('Krepostin');
-console.log(fullName);
-console.log(fullName2);
+// console.log(fullName);
+// console.log(fullName2);
 
 
-function question(job) {
-    if (job === 'developer') {
-        return function(name) {
+function question(job) { // функция принимает тип job 
+    if (job === 'developer') { 
+        return function(name) { // после проверки в зависимости от типа возвращает другую функцию с вопросом, которой необходимо передать имя 
             return `${name}, что такое JS?`;
         };
     } else if (job === 'teacher') {
@@ -99,7 +99,25 @@ function question(job) {
     }
 }
 
-const devQn = question('developer');
+const devQn = question('developer'); // вызвали функцию функцию question
 const teachQn = question('teacher');
-console.log(devQn('Timur'));
-console.log(teachQn('Timur'));
+// console.log(devQn('Timur')); // вызвали вторую функцию, которой передали имя
+// console.log(teachQn('Timur'));
+
+console.log('=======')
+
+// Если возникает множество условий, то можно сделать из логической связи словарь, упростив конструцию
+
+function question2(job) { // это будет объект, где ключем будет название работы, а значением вопрос 
+    const jobDictinary = {
+        developer: 'что такое js',
+        teacher: 'что такое pastperfect'
+    };
+    return function(name) { // функция, которая будет принимать имя
+        return `${name}, ${jobDictinary[job]}?`; // а вместо вопроса, будет подставлять из словаря тип профессии
+    };
+}
+const devQn2 = question2('developer'); // вызвали функцию функцию question
+const teachQn2 = question2('teacher');
+// console.log(devQn2('Timur')); // вызвали вторую функцию, которой передали имя
+// console.log(teachQn2('Timur'));
