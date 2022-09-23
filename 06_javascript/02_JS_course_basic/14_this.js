@@ -51,6 +51,7 @@ const prod1 = {
     },
     },
 };
+
 prod1.getPrice(); // вызывается все та же функция, с указанием на прайс
 prod1.info.getinfo();
 const prod2 = {

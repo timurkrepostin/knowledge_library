@@ -88,7 +88,6 @@ if (user.hasOwnProperty('name')) {
 
 // 6. Оператор или
 value = 1 || 0; // или останавливается на правде и если оно преобразовывается, то он возвращает это значение
-
 // 6.1
 let age = 10;
 if (age < 16 || age > 65) {
@@ -103,7 +102,6 @@ let nickname = serverNickname || 'default nickname';
 console.log('6.2: ' + nickname);
 
 // 7. Оператор и запинается на лжи, пытается вернуть false, если ни одного false не вернет, возвращает последний true
-
 // 7.1
 value = 1 && 0 && 3;
 console.log('7.1 ' + value);

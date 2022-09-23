@@ -23,4 +23,3 @@ value = numArr.concat(1, 2, 3); // позволяет конкакенирова
 value = numArr.join(); // делает из массива строку, принимая разделитель
 value = 'hello world'.split(); // делает из строки массив, манипуляция с ""
 console.log(value, numArr); 
-
