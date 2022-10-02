@@ -1,8 +1,12 @@
 
-NODE.JS
+Postman CHAI
 
-CHAI POSTMAN
+links:
+https://runebook.dev/ru/docs/chai/api/bdd/index
+https://www.chaijs.com/api/bdd/
 
-Node.js + chai + POSTMAN
-
-asda
+Алгоритм:
+1. New collection => New request;
+2. Метод запроса => вбиваем URL;
+3. Body => form-data => заполняем KEY's (не забыть про auth_token);
+4. 
