@@ -9,4 +9,4 @@ var respToken = jsonData.token;
 pm.environment.set("token", respToken) // стандартный сниппет для сохранения токена
 
 Примеры скриптов:
-/get_test_user 
+/get_test_user эндпоинт
