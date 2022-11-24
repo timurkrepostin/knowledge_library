@@ -9,10 +9,10 @@ https://www.chaijs.com/api/bdd/
 1. New collection => New request;
 2. Метод запроса => вбиваем URL;
 3. Body => form-data => заполняем KEY's (не забыть про auth_token) - это информация, которая будет передаваться в body;
-4. Далее прыгаю во вкладку Tests и ворочу там свои дела
+4. Далее прыгаю во вкладку Tests и ворочу там свои дела;
 
 Суть автотестов постмана:
-Проверять response на любые параметры и значения, разбирая JSON ответа на максимум
+Проверять response на любые параметры и значения, разбирая JSON ответа на максимум;
 
 Примеры тестов посредством ввода синтаксисом chai:
 1. 
@@ -44,29 +44,29 @@ let respJson = {
 2.1
 pm.test("arr_test", function () {
     pm.expect(test_arr).to.deep.equal([1, 2]);
-}); // Стандартная проверка массива
+}); // Стандартная проверка массива;
 
 2.2
 pm.test("property_have", function () {
     pm.expect(respJson).to.have.property("age");
-}); // Наличие в джейсоне свойства age
+}); // Наличие в джейсоне свойства age;
 
 2.3
 pm.test("salary 2000", function () {
     pm.expect(respJson.salary).to.deep.equal(2000);
-}); // Проверка значения зарплаты на поставленное
+}); // Проверка значения зарплаты на поставленное;
 
 2.4
 pm.test("have_name_object-key", function () {
     pm.expect(respJson).to.deep.include({"name": "Timur"});
-}); // Проверка на наличие объект - ключ
+}); // Проверка на наличие объект - ключ;
 
 2.5
 pm.test("inside array", function () {
     pm.expect(respJson.family.children).to.deep.include(["Alex", 24]);
-}); // Проверка залезая вглубь массива
+}); // Проверка залезая вглубь массива;
 
 2.6
 pm.test("arr_12", function () {
     pm.expect(respJson.family.children[1]).to.be.an('Array').that.include(12);
-}); // Проверка на тип объекта массив и наличия в нем числа 12
+}); // Проверка на тип объекта массив и наличия в нем числа 12;
