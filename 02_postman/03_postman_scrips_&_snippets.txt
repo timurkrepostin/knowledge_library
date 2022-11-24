@@ -10,8 +10,14 @@ pm.environment.set("token", respToken) // стандартный сниппет 
 
 Примеры скриптов:
 1. Проверить соответствие возрасту () в ответе сервера
-  1. var jsonData = pm.response.json(); // даем пм считать ответ сервера в формате json
+  1. var jsonData = pm.response.json(); // даем пм считать ответ сервера в формате json 
   2. var ageCheck = parseInt(jsonData.age); // объявляем переменную с параметром age и вынимаем значение по ключу, переведя из строки в число
   3. pm.test("your test age > 29", function () {
      pm.expect(age).to.be.above(28)
   })
+
+Проверка возраста из ответа 
+2. pm.test("age check", function () {
+    var jsonData = pm.response.json(); // парсинг указан уже внутри сниппета
+    pm.expect(jsonData.age).to.eql(24); 
+});
